@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
-
-  final String nama = "Haekal Handrian"; 
-  final String npm = "2406431536"; 
-  final String kelas = "C"; 
-
+  final String nama = "Haekal Handrian" ;//nama
+  final String npm = "2406431536" ;//npm
+  final String kelas = "C" ;//kelas
   final List<ItemHomepage> items = [
     ItemHomepage("See Football News", Icons.newspaper),
     ItemHomepage("Add News", Icons.add),
@@ -93,6 +91,13 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
+class ItemHomepage {
+  final String name;
+  final IconData icon;
+
+  ItemHomepage(this.name, this.icon);
+}
+
 class InfoCard extends StatelessWidget {
   // Kartu informasi yang menampilkan title dan content.
 
@@ -126,19 +131,12 @@ class InfoCard extends StatelessWidget {
   }
 }
 
-class ItemHomepage {
- final String name;
- final IconData icon;
-
- ItemHomepage(this.name, this.icon);
-}
-
 class ItemCard extends StatelessWidget {
   // Menampilkan kartu dengan ikon dan nama.
 
-  final ItemHomepage item; 
+  final ItemHomepage item;
 
-  const ItemCard(this.item, {super.key}); 
+  const ItemCard(this.item, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -155,7 +153,7 @@ class ItemCard extends StatelessWidget {
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(
-              SnackBar(content: Text("Kamu telah menekan tombol ${item.name}!"))
+                SnackBar(content: Text("Kamu telah menekan tombol ${item.name}!"))
             );
         },
         // Container untuk menyimpan Icon dan Text
@@ -164,7 +162,7 @@ class ItemCard extends StatelessWidget {
           child: Center(
             child: Column(
               // Menyusun ikon dan teks di tengah kartu.
-              mainAxisAlignmentA: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
                   item.icon,
@@ -184,4 +182,5 @@ class ItemCard extends StatelessWidget {
       ),
     );
   }
+
 }
